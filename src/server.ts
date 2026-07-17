@@ -1,4 +1,7 @@
+import dotenv from 'dotenv';
 import app from './app';
+
+dotenv.config();
 
 if (process.env.VERCEL === undefined) {
   const PORT = process.env.PORT || 5000;
