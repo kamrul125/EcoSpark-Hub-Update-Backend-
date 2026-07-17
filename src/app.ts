@@ -37,6 +37,9 @@ app.use(express.json());
 
 // Routes মাউন্ট করা হচ্ছে
 app.use('/api/v1', router);
+// Also mount at root so legacy or direct `/auth` calls work when routed
+// from Vercel (some clients/proxies may not include the `/api/v1` prefix).
+app.use('/', router);
 
 // সার্ভার স্ট্যাটাস চেক
 app.get('/', (req: Request, res: Response) => {
