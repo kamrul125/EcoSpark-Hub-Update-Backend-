@@ -1,4 +1,7 @@
-import process from 'process';
+declare const process: {
+  exit(code?: number): never;
+};
+
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 
